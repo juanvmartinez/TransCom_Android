@@ -13,11 +13,13 @@
     <string name="title_activity_filtros_cliente">FiltrosCliente</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_lista_servicios">ListaServicios</string>
-
+    <string name="buscarcat">Introduzca la categoria:</string>
+    <string name="buscarser">Encuentra tu servicio Ideal para ello Introduce los siguientes filtros: </string>
     <string name="iniciar_sesión">Iniciar Sesión</string>
     <string name="proveedor">Proveedor</string>
     <string name="cliente">Cliente</string>
     <string name="registrar">Registrese como:</string>
+    <string name="reg">Registrar:</string>
     <string name="o"> o </string>
     <string name="bienvenida">Bienvenido a TransCom, es una plataforma de servicios de transformaicón digital</string>
     <string name="large_text">
