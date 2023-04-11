@@ -17,7 +17,7 @@ public class FiltrosCliente extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), ListaServicios.class);
+                Intent intent = new Intent(getApplicationContext(), DetallesServicio.class);
                 startActivity(intent);
             }
 
