@@ -14,6 +14,23 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_lista_servicios">ListaServicios</string>
     <string name="buscarcat">Introduzca la categoria:</string>
+    <string name="intranngo">Introduzca rango de precios: desde </string>
+    <string name="inttipo"> Tipo de empresa:  </string>
+    <string name="online"> Online </string>
+    <string name="fisica"> Física  </string>
+    <string name="finalizar"> Finalizar alta proveedor  </string>
+    <string name="semifisica"> SemiFísica  </string>
+    <string name="descripcionbreve">Introduzca una breve descripción del servicio de menos de 200 palabras  </string>
+    <string name="descripcion"> Introduzca una descripcion más detallada   </string>
+    <string name="intpunt">Introduzca la puntuación mínima: </string>
+    <string name="hasta"> hasta </string>
+    <string name="siguiente"> Siguiente </string>
+    <string name="buscar"> Buscar </string>
+    <string name="tiempo"> Tiempo del Proyecto </string>
+    <string name="cerotres"> 0-3 meses </string>
+    <string name="ceroseis"> 0-6 meses </string>
+    <string name="unodos"> 1-2 años </string>
+    <string name="masdos"> +2 años </string>
     <string name="buscarser">Encuentra tu servicio Ideal para ello Introduce los siguientes filtros: </string>
     <string name="iniciar_sesión">Iniciar Sesión</string>
     <string name="proveedor">Proveedor</string>
@@ -21,8 +38,24 @@
     <string name="registrar">Registrese como:</string>
     <string name="reg">Registrar:</string>
     <string name="o"> o </string>
+    <string name="nombre">Nombre: </string>
+    <string name="intnom">Introduzca el nombre: </string>
+    <string name="intapellidos">Introduzca los apellidos: </string>
+    <string name="intcorreo">Introduzca el correo electrónico: </string>
+    <string name="intcontrasena">Introduzca la contraseña: </string>
+    <string name="nombremp">Nombre de la empresa: </string>
+    <string name="apellidos">Apellidos: </string>
+    <string name="correo">Correo Electrónico </string>
+    <string name="contrasena"> Contraseña </string>
+    <string name="cif"> Código de Indentificación Fiscal (CIF) </string>
+    <string name="intcif"> Introduzca el Código de Indentificación Fiscal (CIF) </string>
     <string name="bienvenida">Bienvenido a TransCom, es una plataforma de servicios de transformaicón digital</string>
+    <string name="acepto"> Aceptar condiciones de uso  </string>
+    <string name="landing"> Landing page </string>
+    <string name="tienda"> Tienda online </string>
+    <string name="gestion"> Gestión de procesos </string>
     <string name="large_text">
+
         "Material is the metaphor.\n\n"
 
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
