@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nombre"
+        android:textSize="20sp"
         tools:ems="10" />
 
     <EditText
@@ -20,15 +21,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="@string/intnom"
         android:inputType="textPersonName"
-        android:hint="@string/intnom" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/apellidos" />
+        android:text="@string/apellidos"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName2"
@@ -43,7 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/correo" />
+        android:text="@string/correo"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress"
@@ -57,7 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:text="@string/contrasena" />
+        android:text="@string/contrasena"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -72,6 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/acepto"
+        android:textSize="16sp"
         tools:autoText="false" />
 
     <Button

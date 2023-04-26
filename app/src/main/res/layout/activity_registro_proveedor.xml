@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/nombremp" />
+        android:text="@string/nombremp"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -29,7 +30,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/cif" />
+        android:text="@string/cif"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextPersonName4"
@@ -44,7 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/correo" />
+        android:text="@string/correo"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextEmailAddress2"
@@ -59,7 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/contrasena" />
+        android:text="@string/contrasena"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextTextPassword2"
@@ -75,7 +79,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/acepto" />
+        android:text="@string/acepto"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/button4"

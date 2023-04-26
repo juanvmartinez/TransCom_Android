@@ -10,9 +10,10 @@
 
     <TextView
         android:id="@+id/textView28"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/inttipo" />
+        android:text="@string/inttipo"
+        android:textSize="20sp" />
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -42,14 +43,15 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/intranngo" />
+        android:text="@string/intranngo"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextNumber3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:ems="10"
+        android:ems="14"
         android:inputType="number" />
 
     <TextView
@@ -57,21 +59,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:text="@string/hasta" />
+        android:text="@string/hasta"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editTextNumber4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:ems="10"
+        android:ems="14"
         android:inputType="number" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tiempo" />
+        android:text="@string/tiempo"
+        android:textSize="20sp" />
 
     <com.google.android.material.chip.ChipGroup
         android:layout_width="wrap_content"
@@ -111,7 +115,8 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/buscarcat" />
+        android:text="@string/buscarcat"
+        android:textSize="20sp" />
 
     <RadioGroup
         android:layout_width="wrap_content"

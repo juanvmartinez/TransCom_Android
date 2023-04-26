@@ -88,9 +88,11 @@ public class RegistroCliente extends AppCompatActivity {
             }
 
             Log.e("Nombre de la persona;", String.valueOf(postDataParams));
-
+            getApplicationContext();
             try {
                 URL urlConnection  = new URL(url);
+
+
                 Log.e("Nombre de la persona;", String.valueOf(urlConnection));
                 HttpURLConnection conn = (HttpURLConnection)urlConnection.openConnection();
 
