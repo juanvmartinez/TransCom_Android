@@ -17,7 +17,7 @@ public class RegistroProveedor extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SeleccionCategoria.class);
+                Intent intent = new Intent(getApplicationContext(), CaracteristicasServicio.class);
                 startActivity(intent);
             }
 
