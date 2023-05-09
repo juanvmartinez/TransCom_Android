@@ -98,7 +98,6 @@ public class ListaServicios extends AppCompatActivity {
                 postDataParams.put("HastaPrecio", null);
             }
 
-
         } catch (JSONException e) {
             throw new RuntimeException(e);
         }

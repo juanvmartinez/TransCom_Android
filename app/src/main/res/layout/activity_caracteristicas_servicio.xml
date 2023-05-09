@@ -18,7 +18,8 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/radioGroupTipoPago">
 
         <RadioButton
             android:id="@+id/radioButton7"
@@ -120,7 +121,8 @@
 
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupTipoServicios">
 
         <RadioButton
             android:id="@+id/radioButton4"

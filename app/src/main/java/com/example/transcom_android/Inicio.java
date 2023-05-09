@@ -21,7 +21,7 @@ public class Inicio extends AppCompatActivity  {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), FiltrosCliente.class);
+                Intent intent = new Intent(getApplicationContext(), CaracteristicasServicio.class);
                 startActivity(intent);
             }
 

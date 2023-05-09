@@ -27,6 +27,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/descripcionbreve"
         android:ems="2"
         android:hint="@string/descripcionbreve"
         tools:layout_weight="2" />
@@ -34,6 +35,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/descripcion"
         android:layout_weight="2"
         android:hint="@string/descripcion"
         tools:ems="2" />
