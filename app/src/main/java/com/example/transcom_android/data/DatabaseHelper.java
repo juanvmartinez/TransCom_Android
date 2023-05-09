@@ -30,7 +30,7 @@ public class DatabaseHelper {
     String jsonResponse = DatabaseHelper.httpPostRequest("/loginEmpresa",
             new Parametro("usuario", "usuario"),
             new Parametro("password", "password"));
-    response = gson.fromJson(jsonResponse, LoginResponse.class);
+    response = gson.fromJason(jsonResponse, LoginResponse.class);
 
     @android.support.annotation.RequiresApi(api = Build.VERSION_CODES.KITKAT)*/
 public static String httpPostRequest(String requestUrl, Parametro... parametros) {

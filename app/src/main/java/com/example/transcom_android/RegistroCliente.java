@@ -31,6 +31,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,123 +51,59 @@ public class RegistroCliente extends AppCompatActivity {
         setContentView(R.layout.activity_registro_cliente);
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener(){
-
             @Override
             public void onClick(View view) {
-
-                new LoginEmpresaAsync().execute();
-                Intent intent = new Intent(getApplicationContext(), FiltrosCliente.class);
-                startActivity(intent);
+                CreateUser();
             }
+        });
+    }
 
-            });
+    private void CreateUser() {
+        EditText nombre = findViewById(R.id.editTextTextPersonName);
+        String nombre1 = String.valueOf(nombre.getText());
+        EditText apellidos = findViewById(R.id.editTextTextPersonName2);
+        String apellidos1 = String.valueOf(apellidos.getText());
+        EditText email = findViewById(R.id.editTextTextEmailAddress);
+        String email1 = String.valueOf(email.getText());
+        EditText contrasenya = findViewById(R.id.editTextTextPassword);
+        String contrasenya1 = String.valueOf(contrasenya.getText());
+
+        String url = "http://192.168.1.35:80/CreateCliente";
+
+        JSONObject postDataParams = new JSONObject();
+        try {
+            postDataParams.put("nombre", nombre1);
+            postDataParams.put("apellidos", apellidos1);
+            postDataParams.put("email", email1);
+            postDataParams.put("password", contrasenya1);
+
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
         }
-    private class LoginEmpresaAsync extends AsyncTask{
 
-        @Override
-        protected Object doInBackground(Object[] objects) {
-            EditText nombre = findViewById(R.id.editTextTextPersonName);
-            String nombre1 = String.valueOf(nombre.getText());
-            EditText apellidos = findViewById(R.id.editTextTextPersonName2);
-            String apellidos1 = String.valueOf(apellidos.getText());
-            EditText email = findViewById(R.id.editTextTextEmailAddress);
-            String email1 = String.valueOf(email.getText());
-            EditText contrasenya = findViewById(R.id.editTextTextPassword);
-            String contrasenya1 = String.valueOf(contrasenya.getText());
+        RequestQueue volleyQueue = Volley.newRequestQueue(RegistroCliente.this);
 
-            Log.e("Nombre de la persona;", nombre1);
-            Log.e("Nombre de la apellidos;", apellidos1);
-            Log.e("Nombre de la email;", email1);
-            Log.e("Nombre de la contraseña;", contrasenya1);
-            System.out.println(contrasenya);
-            String url = "https://192.168.56.1:7024/CreateCliente";
-            StringBuilder response = new StringBuilder();
-            HashMap<String, String> map = new HashMap<>();
-            JSONObject postDataParams = new JSONObject();
-            try {
-                postDataParams.put("nombre", nombre1);
-                postDataParams.put("apellidos", apellidos1);
-                postDataParams.put("email", email1);
-                postDataParams.put("password", contrasenya1);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
+                Request.Method.POST,
+                url,
+                postDataParams,
+                (Response.Listener<JSONObject>) response -> {
+                    try {
+                        int id = Integer.parseInt(response.getString("id"));
 
-            } catch (JSONException e) {
-                throw new RuntimeException(e);
-            }
-
-            Log.e("Nombre de la persona;", String.valueOf(postDataParams));
-            getApplicationContext();
-            try {
-                URL urlConnection  = new URL(url);
-
-
-                Log.e("Nombre de la persona;", String.valueOf(urlConnection));
-                HttpURLConnection conn = (HttpURLConnection)urlConnection.openConnection();
-
-                int responseCode = conn.getResponseCode();
-                Log.e("HOW HOW HOW", String.valueOf(responseCode));
-                if (responseCode == HttpsURLConnection.HTTP_OK) {
-                    String line;
-                    Log.e("ERES EL MEJOR", String.valueOf(urlConnection));
-                    BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-                    while ((line = br.readLine()) != null) {
-                        response.append(line);
+                        Toast.makeText(RegistroCliente.this, "Cliente creado con éxito", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getApplicationContext(), FiltrosCliente.class);
+                        startActivity(intent);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
-                } else {
-                    response = new StringBuilder();
+                },
+                (Response.ErrorListener) error -> {
+                    Toast.makeText(RegistroCliente.this, "Error al crear cliente", Toast.LENGTH_SHORT).show();
                 }
-                conn.setReadTimeout(15000);
-                conn.setConnectTimeout(15000);
-                conn.setRequestMethod("POST");
-                conn.setDoInput(true);
-                conn.setDoOutput(true);
-                OutputStream os = conn.getOutputStream();
-                BufferedWriter writer = new BufferedWriter(
-                        new OutputStreamWriter(os, StandardCharsets.UTF_8));
-                writer.write(getPostDataString(postDataParams));
-
-                writer.flush();
-                writer.close();
-                os.close();
-
-                conn.disconnect();
-            } catch (ProtocolException e) {
-                Log.e(" ProtocolException HOW HOW HOW", String.valueOf(e));
-                throw new RuntimeException(e);
-            } catch (MalformedURLException e) {
-                Log.e(" MalformedURL  HOW HOW HOW", String.valueOf(e));
-                throw new RuntimeException(e);
-            } catch (IOException e) {
-                Log.e(" IOException HOW HOW HOW", String.valueOf(e));
-                throw new RuntimeException(e);
-            } catch (Exception e) {
-                Log.e(" Exception HOW HOW HOW", String.valueOf(e));
-                throw new RuntimeException(e);
-            }
-
-            return null;
-        }
-        }
-    public String getPostDataString(JSONObject params) throws Exception
-    {
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
-        Iterator<String> itr = params.keys();
-        while (itr.hasNext())
-        {
-            String key = itr.next();
-            Object value = params.get(key);
-
-            if (first)
-                first = false;
-            else
-                result.append("&");
-
-            result.append(URLEncoder.encode(key, "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(value.toString(), "UTF-8"));
-
-        }
-        return result.toString();
+        );
+        volleyQueue.add(jsonObjectRequest);
     }
 
 }
+
